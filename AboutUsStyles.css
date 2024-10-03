@@ -1,0 +1,111 @@
+.about-us-section {
+    padding: 40px 20px;
+    background-color: #2E2E4E;
+    text-align: center;
+}
+
+.about-us-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #C1CFD6;
+}
+
+.about-us-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #C1CFD6;
+    text-align: left;
+}
+
+.about-us-content p {
+    margin-bottom: 20px;
+}
+
+
+.business-hours-section {
+    padding: 20px;
+    background-color: #3F5461;
+    text-align: center;
+}
+
+.business-hours-table {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.business-hours-table td {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+    font-size: 18px;
+    text-align: left;
+}
+
+.business-hours-table tr:last-child td {
+    border-bottom: none;
+}
+
+.contact-us-section {
+    padding: 40px 20px;
+    background-color: #2E2E4E;
+    text-align: center;
+}
+
+.contact-us-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #C1CFD6;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label {
+    text-align: left;
+    font-size: 16px;
+    color: #C1CFD6;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.checkbox-container {
+    display: flex; 
+    align-items: center; 
+    flex-direction:row;
+    margin-top: 10px; 
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-left: 10px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #3F5461;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}

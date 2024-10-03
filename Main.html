@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="HomeStyles.css">
+    <title>Book Haven Bookstore</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="./Assets/Logo.png" alt="Book Haven Logo">
+        </div>
+        <h1>Book Haven Bookstore</h1>
+        <nav>
+            <ul id="nav-links" class="desktop-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="./Gallary.html">Gallery</a></li>
+                <li><a href="./AboutUs.html">About Us</a></li>
+                <li><a href="./HotProducts.html">Hot Products</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                &#9776; <!-- Hamburger icon -->
+            </div>
+        </nav>
+    </header>
+    <div id="mobile-menu" class="mobile-menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="./Gallary.html">Gallery</a></li>
+            <li><a href="./AboutUs.html">About Us</a></li>
+            <li><a href="./HotProducts.html">Hot Products</a></li>
+        </ul>
+    </div>
+    <!-- Promo Items Section -->
+    <section class="promo-items">
+        <h2>Promotional Items</h2>
+        <div class="item-list">
+            <div class="item">
+                <img src="./Assets/Client3_Book1.png" alt="Promo Item 1">
+            </div>
+            <div class="item">
+                <img src="./Assets/Client3_Book2.png" alt="Promo Item 2">
+            </div>
+            <div class="item">
+                <img src="./Assets/Client3_Book3.png" alt="Promo Item 3">
+            </div>
+            <div class="item">
+                <img src="./Assets/Client3_Magazine1.png" alt="Promo Item 4">
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section class="shop-section">
+        <div class="shop-container">
+            <div class="shop-image">
+                <img src="./Assets/Client3_Stickers.png" alt="Shop Image">
+            </div>
+            <div class="shop-button">
+                <div class="button-background">
+                    <p>A set of four Book Haven Bookstore stickers that promote reading</p>
+                </div>
+                <a href="./Gallary.html">
+                    <button>Shop Now</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Shop Here Section -->
+    <section class="why-shop-section">
+        <h2>Why shop with us...</h2>
+        <div class="why-shop-container">
+            <div class="perk">
+                <h3>Diversity of Selection</h3>
+                <p>Book Haven Bookstore offers a wide range of books, magazines, journals, and office supplies to cater
+                    to the varied interests of its customers, ensuring something for everyone.</p>
+            </div>
+            <div class="perk">
+                <h3>Commitment to Literary Exploration</h3>
+                <p>The bookstore is dedicated to fostering a love for reading and encouraging exploration within the
+                    literary world, providing resources that inspire and educate.</p>
+            </div>
+            <div class="perk">
+                <h3>Community Engagement</h3>
+                <p>By aiming to cultivate a vibrant literary community, Book Haven Bookstore seeks to connect book
+                    lovers and knowledge seekers, creating a space for shared interests and discussions.
+                </p>
+            </div>
+            <div class="perk">
+                <h3>User-Friendly Experience</h3>
+                <p>The bookstore is focused on simplifying the process of book inquiries and purchases, ensuring that
+                    customers can easily find and acquire high-quality reading materials and office essentials online.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop by Category Section -->
+    <section class="shop-category-section">
+        <h2>Shop by Category</h2>
+        <div class="category-container">
+            <button class="category-button">Category 1</button>
+            <button class="category-button">Category 2</button>
+            <button class="category-button">Category 3</button>
+            <button class="category-button">Category 4</button>
+            <button class="category-button">Category 5</button>
+            <button class="category-button">Category 6</button>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="newsletter-container">
+            <div class="newsletter">
+                <h3>Sign up for our newsletter</h3>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="newsletter-input">
+                        <input type="email" id="newsletterEmail" placeholder="Enter your email" aria-label="Email" required>
+                        <button id="newsletterSubmit" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="social-buttons">
+                <button class="social-button">FB</button>
+                <button class="social-button">IG</button>
+                <button class="social-button">TW</button>
+                <button class="social-button">LN</button>
+            </div>
+        </div>
+        <div class="footer-links">
+            <a href="./Main.html">Home</a>
+            <a href="./Gallary.html">Gallery</a>
+            <a href="./AboutUs.html">About Us</a>
+            <a href="./HotProducts.html">Hot Products</a>
+        </div>
+    </footer>
+
+
+    <script>
+        // Get the newsletter submit button and input field
+        const newsletterSubmit = document.getElementById('newsletterSubmit');
+        const newsletterEmail = document.getElementById('newsletterEmail');
+    
+        // Add an event listener to the submit button
+        newsletterSubmit.addEventListener('click', (event) => {
+            // Reset custom validity message
+            newsletterEmail.setCustomValidity('');
+            
+            // Check if the email input is valid
+            if (!newsletterEmail.checkValidity()) {
+                newsletterEmail.setCustomValidity('Please enter a valid email address.'); // Set custom error message
+                newsletterEmail.reportValidity(); // Trigger the built-in error display
+                event.preventDefault(); // Prevent form submission
+                return; // Exit the function
+            }
+    
+            // If valid, store the email in local storage
+            const email = newsletterEmail.value.trim();
+            let subscribedEmails = JSON.parse(localStorage.getItem('subscribedEmails')) || [];
+            subscribedEmails.push(email);
+            localStorage.setItem('subscribedEmails', JSON.stringify(subscribedEmails));
+    
+            // Show success message
+            showSuccessMessage(`Thank you for subscribing, ${email}!`);
+            newsletterEmail.value = ''; // Clear the input field
+        });
+    
+        // Function to display success message
+        function showSuccessMessage(message) {
+            const messageContainer = document.createElement('div');
+            messageContainer.className = 'success-message';
+            messageContainer.innerText = message;
+    
+            document.body.appendChild(messageContainer);
+    
+            // Set a timeout to remove the message after 3 seconds
+            setTimeout(() => {
+                messageContainer.remove();
+            }, 3000);
+        }
+    </script>
+    
+    
+</body>
+
+</html>

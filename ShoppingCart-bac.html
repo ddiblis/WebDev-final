@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="HomeStyles.css">
+    <link rel="stylesheet" href="ShoppingCartStyles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./Assets/Logo.png" alt="Book Haven Logo">
+        </div>
+        <h1>Book Haven Bookstore</h1>
+        <nav>
+            <ul class="desktop-nav">
+                <li><a href="./Main.html">Home</a></li>
+                <li><a href="./Gallary.html">Gallery</a></li>
+                <li><a href="./AboutUs.html">About Us</a></li>
+                <li><a href="./HotProducts.html">Hot Products</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                &#9776; <!-- Hamburger icon -->
+            </div>
+        </nav>
+    </header>
+    <div id="mobile-menu" class="mobile-menu">
+        <ul>
+            <li><a href="./Main.html">Home</a></li>
+            <li><a href="./Gallary.html">Gallery</a></li>
+            <li><a href="./AboutUs.html">About Us</a></li>
+            <li><a href="./HotProducts.html">Hot Products</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <h2>Your Shopping Cart</h2>
+        <div class="cart-items">
+            <!-- Shopping cart items will go here -->
+            <p class="empty-cart-message">Your cart is currently empty.</p>
+        </div>
+        <div class="cart-total">
+            <p>Total: <span class="total-amount">$0.00</span></p>
+            <button class="checkout-button">Checkout</button>
+        </div>
+    </main>
+
+    <footer class="footer-section">
+        <div class="newsletter-container">
+            <div class="newsletter">
+                <h3>Sign up for our newsletter</h3>
+                <div class="newsletter-input">
+                    <input type="email" placeholder="Enter your email" aria-label="Email">
+                    <button type="submit">Submit</button>
+                </div>
+            </div>
+            <div class="social-buttons">
+                <button class="social-button">FB</button>
+                <button class="social-button">IG</button>
+                <button class="social-button">TW</button>
+                <button class="social-button">LN</button>
+            </div>
+        </div>
+        <div class="footer-links">
+            <a href="./Main.html">Home</a>
+            <a href="./Gallary.html">Gallery</a>
+            <a href="./AboutUs.html">About Us</a>
+            <a href="./HotProducts.html">Hot Products</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.getElementById("mobile-menu");
+            mobileMenu.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
